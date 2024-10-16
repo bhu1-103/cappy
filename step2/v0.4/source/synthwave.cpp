@@ -140,7 +140,7 @@ void draw_grid()
 
 void draw_axes()
 {
-	glColor4f(0.1f,0.2f,0.3f,1.0f);
+	glColor4f(0.3f,0.4f,0.5f,1.0f);
 	glLineWidth(10.0f);
 	glBegin(GL_LINES);
 		glVertex2f(-50.0f,0.0f);

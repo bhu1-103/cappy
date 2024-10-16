@@ -21,7 +21,7 @@ std::vector<float> points;
 std::vector<std::string> wlan_codes;  // Change from char to std::string
 
 void initOpenGL() {
-    glClearColor(0.02f, 0.02f, 0.02f, 1.0f); // Deep dark purple background
+    glClearColor(0.02f, 0.02f, 0.02f, 1.0f); // not Deep dark purple background
 }
 
 void display() {
@@ -33,8 +33,8 @@ void display() {
     gluPerspective(45.0f, screenWidth / screenHeight, 1.0f, 5000.0f);
     glMatrixMode(GL_MODELVIEW);
     glLoadIdentity();
-    gluLookAt(povX, povY, 6.0f + povZ, // Eye position
-              0.0f, 0.0f, 0.0f,      // Center position
+    gluLookAt(4.0f + povX, povY, 10.0f + povZ, // Eye position
+              4.0f, 2.0f, 0.0f,      // Center position
               0.0f, 1.0f, 0.0f);     // Up direction
 
     // Begin drawing
@@ -59,12 +59,12 @@ void display() {
 }
 
 void keyboardCallback(unsigned char key, int x, int y) {
-    if (key == 'a') { povX -= 1.0f; glutPostRedisplay(); }
-    if (key == 'd') { povX += 1.0f; glutPostRedisplay(); }
-    if (key == 'w') { povY -= 1.0f; glutPostRedisplay(); }
-    if (key == 's') { povY += 1.0f; glutPostRedisplay(); }
-    if (key == 'q') { povZ -= 1.0f; glutPostRedisplay(); }
-    if (key == 'e') { povZ += 1.0f; glutPostRedisplay(); }
+    if (key == 'a') { povX -= 0.2f; glutPostRedisplay(); }
+    if (key == 'd') { povX += 0.2f; glutPostRedisplay(); }
+    if (key == 'w') { povY -= 0.2f; glutPostRedisplay(); }
+    if (key == 's') { povY += 0.2f; glutPostRedisplay(); }
+    if (key == 'q') { povZ -= 0.2f; glutPostRedisplay(); }
+    if (key == 'e') { povZ += 0.2f; glutPostRedisplay(); }
 }
 
 int main(int argc, char** argv) {
