@@ -8,7 +8,7 @@ const int sun_distance_far = 20;
 
 void draw_circle(float posx, float posy, float circle_radius)
 {
-	glColor4f(1.0f,0.0f,1.0f,0.1f);
+	glColor4f(1.0f,0.0f,0.4f,0.1f);
 	glBegin(GL_TRIANGLE_FAN);
 		glVertex3f(posx,posy,0.0f);
 		for(int i = 0; i < circle_resolution; i++) //more the resolution, more the circle curves.
@@ -122,8 +122,8 @@ void draw_point(float w, float x, float y, float z, const char* wlan_code) {
 
 void draw_grid()
 {
-	glColor4f(1.0f,0.0f,1.0f,1.0f);
-	glLineWidth(2.0f);
+	glColor4f(0.0f,0.0f,1.0f,0.3f);
+	glLineWidth(3.0f);
 	for(float i=-1000;i<=1000;i=i+1) //simple for loop to draw many squares
 	{
 		glBegin(GL_LINES);
@@ -140,7 +140,7 @@ void draw_grid()
 
 void draw_axes()
 {
-	glColor4f(0.0f,0.0f,0.0f,1.0f);
+	glColor4f(0.1f,0.2f,0.3f,1.0f);
 	glLineWidth(10.0f);
 	glBegin(GL_LINES);
 		glVertex2f(-50.0f,0.0f);

@@ -21,7 +21,7 @@ std::vector<float> points;
 std::vector<std::string> wlan_codes;  // Change from char to std::string
 
 void initOpenGL() {
-    glClearColor(0.2f, 0.0f, 0.2f, 1.0f); // Deep dark purple background
+    glClearColor(0.02f, 0.02f, 0.02f, 1.0f); // Deep dark purple background
 }
 
 void display() {
@@ -38,7 +38,7 @@ void display() {
               0.0f, 1.0f, 0.0f);     // Up direction
 
     // Begin drawing
-    //draw_grid();
+    draw_grid();
     draw_axes();
 	glColor4f(1.0f,1.0f,1.0f,0.4f);
 	/*draw_naked_circle(0.0f,0.0f,0.0f,05.0f);
