@@ -1,28 +1,39 @@
-#!/bin/bash
+import pandas as pd
+import glob
 
-INPUT_FILE="z_output/input_nodes_copy_deployment_000.csv"
-INPUT_DIR="z_output"
+import numpy as np
 
-if [[ -f "$INPUT_FILE" ]]; then
-    echo "Processing $INPUT_FILE..."
-    
-    last_line=$(tail -n 1 "$INPUT_FILE")
-    third_element=$(echo "$last_line" | cut -d';' -f3)
+count=0
+path = r"../step1/x-y_output/"
+f1 = glob.glob(path + "/*.csv")
 
-    if [[ "$third_element" =~ ^[A-Z]$ ]]; then
-        echo "Last line has $third_element in the third element. Running ${third_element}.sh for all CSV files in the directory..."
-        
-        for csv_file in "$INPUT_DIR"/*.csv; do
-            if [[ -f "$csv_file" ]]; then
-                echo "Running ${third_element}.sh for $csv_file..."
-                ./"${third_element}.sh" "$csv_file"
-            else
-                echo "No CSV files found in the directory."
-            fi
-        done
-    else
-        echo "Last line does not have an alphabet in the third element. No action taken."
-    fi
-else
-    echo "File $INPUT_FILE not found."
-fi
+path3 =r"z_output/"
+
+for file1 in f1:
+
+            df3 = pd.read_csv(file1,delimiter=';')
+            df3 = df3.drop(columns=["node_code","node_type","wlan_code","x(m)", "y(m)","z(m)"])
+
+            columns2 = ["node_code","node_type","wlan_code","x(m)","y(m)"]
+            df1 = pd.read_csv(file1,delimiter=';',usecols=columns2)
+
+            data = np.around(np.random.uniform(3, 100, size=3000),decimals=4)
+            df2 = pd.DataFrame(data, columns=['z(m)'])
+
+            df_all_rows = pd.merge(df1, df2, left_index=True,right_index=True)
+            df_all_rows2 = pd.merge(df_all_rows, df3, left_index=True,right_index=True)
+
+            df_all_rows2.len=min(len(df1),len(df2))
+
+            name = path3 + "input_nodes_copy_deployment_00" + str(count) +".csv"
+            name1 = path3 + "input_nodes_copy_deployment_0" + str(count) +".csv"
+            name2 = path3 + "input_nodes_copy_deployment_" + str(count) +".csv"
+
+            if count<=9:
+                df_all_rows2.to_csv(name,sep=';',index=False)
+            elif count<=999:
+                df_all_rows2.to_csv(name1,sep=';',index=False)
+            else:
+                df_all_rows2.to_csv(name2,sep=';',index=False)
+
+            count+=1
