@@ -306,4 +306,3 @@ void ComputeFramesDuration(double *rts_duration, double *cts_duration,
 	*ack_duration = computeAckTxTime80211ax(num_packets_aggregated, IEEE_BITS_OFDM_SYM_LEGACY);
 
 }
-

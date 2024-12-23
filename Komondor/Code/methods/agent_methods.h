@@ -98,4 +98,3 @@ bool CheckValidityOfData(Configuration configuration, Performance performance,
 }
 
 #endif
-

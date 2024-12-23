@@ -217,4 +217,3 @@ void HandleContentionWindow(int cw_adaptation, int increase_or_reset, int* cw_cu
 		// Constant CW - do nothing: keep cw
 	}
 }
-

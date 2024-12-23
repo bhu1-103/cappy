@@ -7,7 +7,7 @@
  * Copyright (C) 2007 Free Software Foundation, Inc. <http://fsf.org/>
  * Everyone is permitted to copy and distribute verbatim copies
  * of this license document, but changing it is not allowed.
- * 
+ *
  * Redistribution and use in source and binary forms, with or without
  * modification, are permitted provided that the following conditions
  * are met:
@@ -70,7 +70,6 @@ struct Performance
 	int rts_cts_sent;				///> Number of RTS/CTS packets sent
 	int rts_cts_lost;				///> Number of RTS/CTS packets lost
 	int rts_lost_slotted_bo;		///> Number of RTS/CTS packets lost by slotted BO
-	double average_sinr;
 
 	// Buffer statistics
 	int num_packets_generated;		///> Number of packets generated
@@ -95,8 +94,6 @@ struct Performance
 	int *num_trials_tx_per_num_channels;				///> Number of attempts for transmitting to each number of channels
 	double average_waiting_time;						///> Average waiting time
 	double bandwidth_used_txing;						///> Bandwidth used during transmissions
-	int min_channel_allowed;                            ///> First channel used
-    int max_channel_allowed;                            ///> Last channel used
 	double *total_time_transmitting_per_channel;		///> Total time transmitting in each channel
 	double *total_time_transmitting_in_num_channels;	///> Total time transmitting per each channel width
 	double *total_time_lost_per_channel;				///> Total time lost in each channel (e.g. collisions)
@@ -202,4 +199,3 @@ struct Performance
 };
 
 #endif
-

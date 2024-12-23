@@ -244,7 +244,7 @@ double ComputePowerReceived(double distance, double tx_power, double central_fre
 			//	  Shadowing: Log-normal with 5 dB standard deviation, iid across all links
 			break;
 	//	  PL(d) = 40.05 + 20*log10(fc/2.4) + 20*log10(min(d,10)) + (d>10) * 35*log10(d/10) + 7*W
-	//	  W = number of office walls traversed in x-direction plus number of office walls traversed in y-direction
+	//	  W = number of office walls traversed in x-direction plus number of office walls traversed in y-direction
 	//	  use MCS0 or MCS7 for all transmissions
 	//	  APs have 4 rx and tx antennas
 		}
@@ -1692,4 +1692,3 @@ void PrintOrWriteChannelForTx(int write_or_print, int save_node_logs, int print_
 }
 
 #endif
-

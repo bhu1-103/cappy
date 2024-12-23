@@ -221,4 +221,3 @@ int CheckPowerConstraints(double current_obss_pd, double obss_pd_min, double obs
 		return 0;
 	}
 }
-

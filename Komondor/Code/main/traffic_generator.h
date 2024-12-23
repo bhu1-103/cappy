@@ -224,4 +224,3 @@ void TrafficGenerator :: InitializeTrafficGenerator() {
 	num_bursts = 0;
 	GenerateTraffic();
 }
-

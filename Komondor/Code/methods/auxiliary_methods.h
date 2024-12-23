@@ -304,4 +304,3 @@ double FixTimeOffset(double time_value, int trunc_pos, int round_pos){
 }
 
 #endif
-

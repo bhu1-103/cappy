@@ -475,4 +475,3 @@ TxInfo GenerateTxInfo(int num_packets_aggregated, double data_duration,	double a
 	return tx_info;
 
 }
-

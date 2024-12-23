@@ -101,4 +101,3 @@ double ComputeEbToNoise(double sinr, double bit_rate, int bandwidth, int modulat
 	return Eb_to_N0;
 
 }
-

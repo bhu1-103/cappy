@@ -10,7 +10,7 @@ cd ..
 rm output/*
 
 # get input files path in folder 'script_input_files'
-cd input/sce1a
+cd input/script_input_files
 
 echo 'DETECTED KOMONDOR INPUT FILES: '
 file_ix=0
@@ -33,7 +33,7 @@ do
 	echo ""
 	echo "++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
 	echo "- EXECUTING ${array[executing_ix]} (${executing_ix}/${file_ix})"
-	./komondor_main ./input/sce1a/${array[executing_ix]} ./output/script_output.txt sim${executing_ix} 1 0 0 1 $SIM_TIME $SEED
+	./main/komondor_main ./input/input_system_conf.csv ./input/script_input_files/${array[executing_ix]} ./output/script_output.txt sim${executing_ix} 1 0 0 1 $SIM_TIME $SEED
 	echo "++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
 	echo ""
 done
